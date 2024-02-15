@@ -34,16 +34,14 @@ function calcTotal() {
          if(!(wgtBox.value > 0)){
             throw "!! Enter a positive weight";
          }
-         totalCost += wgtBox.value * COST_PER_LB;      
-      } catch(error) {
-         msgBox.innerHTML = error
-      }
+         totalCost += wgtBox.value * COST_PER_LB; 
 
-      try{
-         totalCost += distBox.value * COST_PER_MILE;   
-         throw "!! Enter a positive mileage";
-      }
-      catch(error) {
+         if(!(distBox.value > 0)) {
+            throw "!! Enter a positive mileage";
+         }
+         totalCost += distBox.value * COST_PER_MILE; 
+
+      } catch(error) {
          msgBox.innerHTML = error
       }
    
